@@ -32,9 +32,9 @@ if( process.env.DATABASE_URL ){
 
   //otherwise we are on the local network
   var configs = {
-      user: 'akira',
+      user: 'siangeeeo',
       host: '127.0.0.1',
-      database: 'testdb',
+      database: 'pokemons',
       port: 5432
   };
 }
@@ -47,7 +47,7 @@ const app = express();
 // Root GET request (it doesn't belong in any controller file)
 app.get('/', (request, response) => {
 
-  pool.query('SELECT * FROM pokemon', (error, queryResult) => {
+  pool.query('SELECT * FROM pokemons', (error, queryResult) => {
     if (error) console.error('error!', error);
 
     let context = {
